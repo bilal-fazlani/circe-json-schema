@@ -1,11 +1,11 @@
 package io.circe.schema
 
-import cats.data.{ Validated, ValidatedNel }
-import io.circe.{ Json, JsonNumber, JsonObject }
+import cats.data.{Validated, ValidatedNel}
+import io.circe.{Json, JsonNumber, JsonObject}
 import java.util.HashMap
-import org.everit.json.schema.{ Schema => EveritSchema, ValidationException }
+import org.everit.json.schema.{Schema => EveritSchema, ValidationException}
 import org.everit.json.schema.loader.SchemaLoader
-import org.json.{ JSONArray, JSONObject, JSONTokener }
+import org.json.{JSONArray, JSONObject, JSONTokener}
 import scala.util.Try
 
 trait Schema {
