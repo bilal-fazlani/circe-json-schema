@@ -1,4 +1,4 @@
-package io.circe.schema
+package com.bilalfazlani.circe.schema
 
 import cats.data.Validated
 import io.circe.{ Decoder, Json }
