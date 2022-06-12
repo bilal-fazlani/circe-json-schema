@@ -1,8 +1,35 @@
 val circeVersion = "0.15.0-M1"
 val everitVersion = "1.14.0"
-val scala3 = "3.1.2"
 
-val root = project.in(file(".")).aggregate(schema)
+ThisBuild / scalaVersion := "3.1.2"
+ThisBuild / organization := "com.bilal-fazlani"
+ThisBuild / organizationName := "Bilal Fazlani"
+ThisBuild / scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/bilal-fazlani/circe-json-schema"),
+    "https://github.com/bilal-fazlani/circe-json-schema.git"
+  )
+)
+ThisBuild / developers := List(
+  Developer(
+    "bilal-fazlani",
+    "Bilal Fazlani",
+    "bilal.m.fazlani@gmail.com",
+    url("https://bilal-fazlani.com")
+  )
+)
+ThisBuild / licenses := List(
+  "MIT License" -> url(
+    "https://github.com/bilal-fazlani/circe-json-schema/blob/main/LICENSE"
+  )
+)
+ThisBuild / homepage := Some(url("https://github.com/bilal-fazlani/circe-json-schema"))
+
+val root = project.in(file("."))
+  .aggregate(schema)
+  .settings(
+    publish / skip := true
+  )
 
 lazy val schema = project
   .in(file("schema"))

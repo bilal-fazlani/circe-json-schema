@@ -1,4 +1,4 @@
-package io.circe.schema
+package com.bilalfazlani.circe.schema
 
 import cats.data.{Validated, ValidatedNel}
 import io.circe.{Json, JsonNumber, JsonObject}
