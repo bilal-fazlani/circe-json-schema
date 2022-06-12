@@ -3,9 +3,13 @@ name: Build
 on:
   push:
     branches: [ main, master ]
+    paths-ignore:
+      - README.md
 
   pull_request:
     branches: [ main, master ]
+    paths-ignore:
+      - README.md    
 
 jobs:
   build:
