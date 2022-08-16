@@ -2,6 +2,7 @@ val circeVersion = "0.15.0-M1"
 val everitVersion = "1.14.0"
 
 ThisBuild / scalaVersion := "3.1.2"
+ThisBuild / crossScalaVersions := List("3.1.2", "2.13.1")
 ThisBuild / organization := "com.bilal-fazlani"
 ThisBuild / organizationName := "Bilal Fazlani"
 ThisBuild / scmInfo := Some(
@@ -25,7 +26,8 @@ ThisBuild / licenses := List(
 )
 ThisBuild / homepage := Some(url("https://github.com/bilal-fazlani/circe-json-schema"))
 
-val root = project.in(file("."))
+val root = project
+  .in(file("."))
   .aggregate(schema)
   .settings(
     publish / skip := true
