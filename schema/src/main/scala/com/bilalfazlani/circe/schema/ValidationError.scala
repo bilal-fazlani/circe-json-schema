@@ -21,6 +21,15 @@ object ValidationError {
   ): ValidationError =
     new ValidationError(keyword, location, schemaLocation) {
       final override def getMessage: String = message
+
+      override def equals(obj: Any): Boolean = obj match {
+        case that: ValidationError =>
+          this.keyword == that.keyword &&
+            this.getMessage == that.getMessage &&
+            this.location == that.location &&
+            this.schemaLocation == that.schemaLocation
+        case _ => false
+      }
     }
 
   private[this] def fromEveritOne(e: ValidationException): ValidationError =
