@@ -1,8 +1,8 @@
 val circeVersion = "0.15.0-M1"
 val everitVersion = "1.14.0"
 
-ThisBuild / scalaVersion := "3.1.2"
-ThisBuild / crossScalaVersions := List("3.1.2", "2.13.8")
+ThisBuild / scalaVersion := "3.2.0"
+ThisBuild / crossScalaVersions := List("3.2.0", "2.13.8")
 ThisBuild / organization := "com.bilal-fazlani"
 ThisBuild / organizationName := "Bilal Fazlani"
 ThisBuild / scmInfo := Some(
