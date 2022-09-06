@@ -25,11 +25,17 @@ object ValidationError {
       override def equals(obj: Any): Boolean = obj match {
         case that: ValidationError =>
           this.keyword == that.keyword &&
-            this.getMessage == that.getMessage &&
-            this.location == that.location &&
-            this.schemaLocation == that.schemaLocation
+          this.getMessage == that.getMessage &&
+          this.location == that.location &&
+          this.schemaLocation == that.schemaLocation
         case _ => false
       }
+
+      override def hashCode(): Int =
+        (this.keyword, this.getMessage, this.location, this.schemaLocation).hashCode
+
+      override def toString =
+        s"ValidationError(${this.keyword}, ${this.getMessage}, ${this.location}, ${this.schemaLocation})"
     }
 
   private[this] def fromEveritOne(e: ValidationException): ValidationError =
